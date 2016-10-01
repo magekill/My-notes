@@ -83,7 +83,7 @@ body{
         transition: all .5s ease-out;
     }
     body{
-        overflow-y: auto;
+        overflow: auto;
     }
     #other .prev{
         transform: translateX(-110%);
