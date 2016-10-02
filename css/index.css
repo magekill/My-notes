@@ -84,6 +84,7 @@ body{
     }
     body{
         overflow-y: auto;
+        min-width: 320px;
     }
     #other .prev{
         transform: translateX(-110%);
