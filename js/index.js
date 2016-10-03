@@ -57,8 +57,8 @@ var $sidebar = $('#sidebar'),
         indexLen = $('#index>li').length;
     $prev.click(function(){
         var href = window.location.href,
-             file = /\/(\w+)\.html/.exec(href)[1];
-        if(file === 'index'){
+             file = /\/(\w+)\.html/.exec(href)[1] || null;
+        if(file === 'index' || null){
             alert('这已经是第一页了');
         }else if(file === 'note1'){
             window.location.href = '../index.html';
