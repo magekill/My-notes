@@ -55,10 +55,10 @@ var $sidebar = $('#sidebar'),
     var $prev = $('#other').find('.prev'),
         $next = $('#other').find('.next'),
         indexLen = $('#index>li').length;
-    $prev.click(function(){
         var href = window.location.href,
-            result = /\/(\w+)\.html/.exec(href)
-            file = result ? result[1] : null;
+        result = /\/(\w+)\.html/.exec(href)
+        file = result ? result[1] : null;
+    $prev.click(function(){
         if(file === 'index' || file === null){
             alert('这已经是第一页了');
         }else if(file === 'note1'){
@@ -68,10 +68,8 @@ var $sidebar = $('#sidebar'),
             window.location.href = 'note' + (reg-1) + '.html';
         }
     });
-    $next.click(function(){
-        var href = window.location.href,
-             file = /\/(\w+)\.html/.exec(href)[1];
-        if(file === 'index'){
+    $next.click(function(){   
+        if(file === 'index' || file === null){
             window.location.href = 'notes/note1.html';
         }else if(file === 'note'+indexLen){
             alert('已经是最后一页了');
