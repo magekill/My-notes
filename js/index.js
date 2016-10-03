@@ -59,7 +59,7 @@ var $sidebar = $('#sidebar'),
         var href = window.location.href,
             result = /\/(\w+)\.html/.exec(href)
             file = result ? result[1] : null;
-        if(file === 'index' || null){
+        if(file === 'index' || file === null){
             alert('这已经是第一页了');
         }else if(file === 'note1'){
             window.location.href = '../index.html';
