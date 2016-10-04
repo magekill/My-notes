@@ -13,7 +13,7 @@ var $sidebar = $('#sidebar'),
         $content.css({
             'background-color' : 'rgba(0,0,0,.3)',
             'left' : '60%'
-        }).one('touchstart',function(){
+        }).one('touchend',function(){
             $sidebar.css({
                 'box-shadow' : 'none',
                 'left' : '-60%'
