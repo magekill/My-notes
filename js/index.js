@@ -4,30 +4,7 @@ var $sidebar = $('#sidebar'),
 (function(){
     var $show = $('#nav').find('.show');
     $show.click(function(){
-        // 划出目录jquery写法
-        // $sidebar.css('box-shadow','5px 0 5px rgba(0,0,0,.3)').stop().animate({
-        //     left : '0'
-        // });
-        // $content.css({
-        //     'background-color' : 'rgba(0,0,0,.3)'
-        // }).stop().animate({
-        //     left: '60%'
-        // },function(){
-        //    var $this = $(this),
-        //        $conLeft = parseInt($this.css('left'));
-        //    if($conLeft > 0){
-        //         $this.one('click',function(){
-        //             $sidebar.css('box-shadow','none').stop().animate({
-        //                 left: '-60%'
-        //             });
-        //             $this.css({
-        //                 'background-color' : '#fff'
-        //             }).stop().animate({
-        //                 left: '0' 
-        //             });
-        //         });
-        //     }
-        // });
+        
         // 划出目录css3写法
         $sidebar.css({
             'box-shadow' : '5px 0 5px rgba(0,0,0,.3)',
@@ -54,11 +31,13 @@ var $sidebar = $('#sidebar'),
 (function(){
     var $prev = $('#other').find('.prev'),
         $next = $('#other').find('.next'),
-        indexLen = $('#index>li').length;
-        var href = window.location.href,
-        result = /\/(\w+)\.html/.exec(href)
-        file = result ? result[1] : null;
-    $prev.click(function(){
+        $index = $('#index>li'),
+        indexLen = $index.length;
+    var href = window.location.href,
+        result = /\/(\w+)\.html/.exec(href),
+        file = result ? result[1] : null,
+        reg = /\d+/.exec(file);
+        $prev.click(function(){
         if(file === 'index' || file === null){
             alert('这已经是第一页了');
         }else if(file === 'note1'){
@@ -74,10 +53,16 @@ var $sidebar = $('#sidebar'),
         }else if(file === 'note'+indexLen){
             alert('已经是最后一页了');
         }else{
-            var reg = /\d+/.exec(file)[0];
-            window.location.href = 'note' + (++reg) + '.html';
+            // var reg = /\d+/.exec(file)[0];
+            window.location.href = 'note' + (++reg[0]) + '.html';
         }
     });
+
+    if(file === 'index' || file === null){
+        $index.eq(0).find('a').css('color', 'blue');
+    }else{
+        $index.eq(reg[0]).find('a').css('color', 'blue');
+    };
 })();
 
 // 回到顶部
