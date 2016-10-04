@@ -2,7 +2,7 @@ html,body,div,ul,li,a,h1,h2,h3,h4,h5.h6,input{
     margin: 0;
     padding: 0;
 }
-ul,li{
+li{
     list-style: none;
 }
 a{
@@ -184,6 +184,7 @@ h2{
 #index li{
     font-size: 12px;
     line-height: 2em;
+    list-style-type :decimal;
 }
 #index li a:hover{
     color: blue;
