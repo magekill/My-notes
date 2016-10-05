@@ -82,6 +82,19 @@ var $sidebar = $('#sidebar'),
     });
 })();
 
+// 获取内容
+$.ajax({
+    url: '../node/content.js',
+    type: 'GET',
+    data: {docs : 'note0'},
+    success: function(response){
+        $content.text(response);
+    },
+    error: function(err){
+        console.log(err);
+    }
+})
+
 
 
 
