@@ -28,42 +28,32 @@ var $sidebar = $('#sidebar'),
 
 
 // 翻页
-(function(){
-    var $prev = $('#other').find('.prev'),
-        $next = $('#other').find('.next'),
-        $index = $('#index>li'),
-        indexLen = $index.length;
-    var href = window.location.href,
-        result = /\/(\w+)\.html/.exec(href),
-        file = result ? result[1] : null,
-        reg = /\d+/.exec(file);
-        $prev.click(function(){
-        if(file === 'index' || file === null){
-            alert('这已经是第一页了');
-        }else if(file === 'note1'){
-            window.location.href = '../index.html';
-        }else{
-            var reg = /\d+/.exec(file)[0];
-            window.location.href = 'note' + (reg-1) + '.html';
-        }
-    });
-    $next.click(function(){   
-        if(file === 'index' || file === null){
-            window.location.href = 'notes/note1.html';
-        }else if(file === 'note'+indexLen){
-            alert('已经是最后一页了');
-        }else{
-            // var reg = /\d+/.exec(file)[0];
-            window.location.href = 'note' + (++reg[0]) + '.html';
-        }
-    });
+// (function(){
+//     var $prev = $('#other').find('.prev'),
+//         $next = $('#other').find('.next'),
+//         $index = $('#index>li'),
+//         indexLen = $index.length,
+//         count = 0;
+//     $prev.click(function(){
+            
+//     });
+//     $next.click(function(){   
+//         if(file === 'index' || file === null){
+//             window.location.href = 'notes/note1.html';
+//         }else if(file === 'note'+indexLen){
+//             alert('已经是最后一页了');
+//         }else{
+//             // var reg = /\d+/.exec(file)[0];
+//             window.location.href = 'note' + (++reg[0]) + '.html';
+//         }
+//     });
 
-    if(file === 'index' || file === null){
-        $index.eq(0).find('a').css('color', 'blue');
-    }else{
-        $index.eq(reg[0]).find('a').css('color', 'blue');
-    };
-})();
+//     if(file === 'index' || file === null){
+//         $index.eq(0).find('a').css('color', 'blue');
+//     }else{
+//         $index.eq(reg[0]).find('a').css('color', 'blue');
+//     };
+// })();
 
 // 回到顶部
 (function(){
@@ -83,19 +73,58 @@ var $sidebar = $('#sidebar'),
 })();
 
 // 获取内容
-$.ajax({
-    url: '../node/content.js',
-    type: 'GET',
-    data: {docs : 'note0'},
-    success: function(response){
-        $content.text(response);
-    },
-    error: function(err){
-        console.log(err);
-    }
-})
+function getContent(docs){
+    $.ajax({
+        url: 'http://localhost',
+        type: 'GET',
+        data: {docs : docs},
+        success: function(response){
+            $content.html(response);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    })
+}
 
+getContent('home');
 
+// 获取目录
+function getIndex(){
+    $.ajax({
+        url: 'http://localhost',
+        type: 'GET',
+        data: {docs : 'index'},
+        success: function(response){
+            var ol = '';
+            var title = JSON.parse(response).title;
+            title.forEach(function(title){
+                for(var i in title){
+                    ol += '<li>'+title[i]+'</li>';
+                }
+            });
+            $('#index').html(ol);
+            // turnPage(title);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    }).done(function(){
+        console.log($('#index>li').length);
+    });
+}
 
+getIndex();
+
+function turnPage(title){
+    var count = 1;
+    var $prev = $('#other').find('.prev'),
+        $next = $('#other').find('.next');
+    $next.click(function(){
+        var docs = title[count];
+        var doc = Object.keys(docs)[0];
+        gitCotent(doc);
+    });
+}
 
 
