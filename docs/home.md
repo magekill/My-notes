@@ -1,29 +1,7 @@
-<h1>大标题</h1>
-<p>当页面特别长的时候，用户想回到页面顶部，必须得滚动好几次滚动键才能回到顶部，如果在页面右下角有个“返回顶部”的按钮，用户点击一下，就可以回到顶部，对于用户来说，是一个比较好的体验。 实现原理：当页面加载的时候，把元素定位到页面的右下角，当页面滚动时，元素一直位于右下角，当用户点击的时候，页面回到顶部。
-要点一：document.documentElement.clientWidth || document.body.clientWidth； 获得可视区的宽度。后面是兼容chrome，前面是兼容其它浏览器。 要点二：oTop.style.left
-= screenw - oTop.offsetWidth +"px"; 当页面加载时，让元素的位置位于页面最右边，用可视区的宽度减去元素本身的宽度。 要点三：oTop.style.top = screenh - oTop.offsetHeight
-+ scrolltop +"px"; 当页面滚动时，元素的Y坐标位置等于可视区的高度减去元素本身的高度，加上滚动距离。 要点四：document.documentElement.scrollTop = document.body.scrollTop
-=0; 当点击元素时，让页面的滚动距离为0.写两个是为了兼容。</p>
-<hr class="solid">
-<h2>小标题</h2>
-<p>当页面特别长的时候，用户想回到页面顶部，必须得滚动好几次滚动键才能回到顶部，如果在页面右下角有个“返回顶部”的按钮，用户点击一下，就可以回到顶部，对于用户来说，是一个比较好的体验。 实现原理：当页面加载的时候，把元素定位到页面的右下角，当页面滚动时，元素一直位于右下角，当用户点击的时候，页面回到顶部。
-要点一：document.documentElement.clientWidth || document.body.clientWidth； 获得可视区的宽度。后面是兼容chrome，前面是兼容其它浏览器。 要点二：oTop.style.left
-= screenw - oTop.offsetWidth +"px"; 当页面加载时，让元素的位置位于页面最右边，用可视区的宽度减去元素本身的宽度。 要点三：oTop.style.top = screenh - oTop.offsetHeight
-+ scrolltop +"px"; 当页面滚动时，元素的Y坐标位置等于可视区的高度减去元素本身的高度，加上滚动距离。 要点四：document.documentElement.scrollTop = document.body.scrollTop
-=0; 当点击元素时，让页面的滚动距离为0.写两个是为了兼容。</p>
-<p>当页面特别长的时候，用户想回到页面顶部，必须得滚动好几次滚动键才能回到顶部，如果在页面右下角有个“返回顶部”的按钮，用户点击一下，就可以回到顶部，对于用户来说，是一个比较好的体验。 实现原理：当页面加载的时候，把元素定位到页面的右下角，当页面滚动时，元素一直位于右下角，当用户点击的时候，页面回到顶部。
-要点一：document.documentElement.clientWidth || document.body.clientWidth； 获得可视区的宽度。后面是兼容chrome，前面是兼容其它浏览器。 要点二：oTop.style.left
-= screenw - oTop.offsetWidth +"px"; 当页面加载时，让元素的位置位于页面最右边，用可视区的宽度减去元素本身的宽度。 要点三：oTop.style.top = screenh - oTop.offsetHeight
-+ scrolltop +"px"; 当页面滚动时，元素的Y坐标位置等于可视区的高度减去元素本身的高度，加上滚动距离。 要点四：document.documentElement.scrollTop = document.body.scrollTop
-=0; 当点击元素时，让页面的滚动距离为0.写两个是为了兼容。内容</p>
-<hr class="dotted">
-<p>当页面特别长的时候，用户想回到页面顶部，必须得滚动好几次滚动键才能回到顶部，如果在页面右下角有个“返回顶部”的按钮，用户点击一下，就可以回到顶部，对于用户来说，是一个比较好的体验。 实现原理：当页面加载的时候，把元素定位到页面的右下角，当页面滚动时，元素一直位于右下角，当用户点击的时候，页面回到顶部。
-要点一：document.documentElement.clientWidth || document.body.clientWidth； 获得可视区的宽度。后面是兼容chrome，前面是兼容其它浏览器。 要点二：oTop.style.left
-= screenw - oTop.offsetWidth +"px"; 当页面加载时，让元素的位置位于页面最右边，用可视区的宽度减去元素本身的宽度。 要点三：oTop.style.top = screenh - oTop.offsetHeight
-+ scrolltop +"px"; 当页面滚动时，元素的Y坐标位置等于可视区的高度减去元素本身的高度，加上滚动距离。 要点四：document.documentElement.scrollTop = document.body.scrollTop
-=0; 当点击元素时，让页面的滚动距离为0.写两个是为了兼容。</p>
-<p>当页面特别长的时候，用户想回到页面顶部，必须得滚动好几次滚动键才能回到顶部，如果在页面右下角有个“返回顶部”的按钮，用户点击一下，就可以回到顶部，对于用户来说，是一个比较好的体验。 实现原理：当页面加载的时候，把元素定位到页面的右下角，当页面滚动时，元素一直位于右下角，当用户点击的时候，页面回到顶部。
-要点一：document.documentElement.clientWidth || document.body.clientWidth； 获得可视区的宽度。后面是兼容chrome，前面是兼容其它浏览器。 要点二：oTop.style.left
-= screenw - oTop.offsetWidth +"px"; 当页面加载时，让元素的位置位于页面最右边，用可视区的宽度减去元素本身的宽度。 要点三：oTop.style.top = screenh - oTop.offsetHeight
-+ scrolltop +"px"; 当页面滚动时，元素的Y坐标位置等于可视区的高度减去元素本身的高度，加上滚动距离。 要点四：document.documentElement.scrollTop = document.body.scrollTop
-=0; 当点击元素时，让页面的滚动距离为0.写两个是为了兼容。</p>
+<h1>笔记</h1>
+<p>如题，这是一本笔记。</p>
+<p>一直以来都没有记笔记的习惯，总是提起笔来就不知道些什么好了，可是作为一个前端的学习者，在几个月的学习中，深切的体会到前端知识多跟杂乱，我这低容量的大脑已经完全无法存储这么多东西。所以，所谓好记性不如烂笔头，就写个笔记吧。</p>
+<p>自从做了记笔记这个决定后，我又开始烦恼了，笔记该怎么记呢？果然以前没有记笔记的习惯，突然说要记笔记还是一百个不适应啊。拿出我那积满灰尘的小本本，翻开后我便开始了沉思，第一笔该写什么呢，就这样思索，半小时后我的思绪早就不知道跑到哪里去了。不知道因为哪个契机，我的思绪突然有回到了现实，对呀，我是要记笔记啊，看了看我手上的小本本，上面除了鬼画什么都没有。啊啊啊，我懊恼的哀嚎着，去你大爷的小本本，去你大爷的笔记，果然记笔记这个习惯是很难养成的啊。</p>
+<p>这样果然不行，可是学习还是要继续，学习继续就会遇到杂乱无章的知识，遇到杂乱无章的知识对记忆力的考验也愈发明显，果然还是需要烂笔头啊。</p>
+<p>于是乎，我决定就做个网页笔记。</p>
+<p>然后，我就做出了这个拙劣的网页，不过无所谓啊，反正只有我自己看，哈哈哈。</p>

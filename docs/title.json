@@ -1,7 +1,7 @@
 {
     "title" : [
-        {"home" : "首页"},
-        {"jsonp" : "jsonp"},
-        {"ajax" : "ajax"}
+        {"home" : "笔记"},
+        {"jsonp" : "jsonp的实现原理"},
+        {"window" : "window对象的属性和方法总结"}
     ]   
 }

@@ -16,7 +16,14 @@ var server = http.createServer(function(request,response){
     if (docsName && docsName !== 'index'){
         response.writeHead(200);
         var docsPath = path.join(docsFile, docsName+'.md');
-        fs.createReadStream(docsPath).pipe(response);
+        fs.exists(docsPath, function(exists){
+            if(exists){
+                fs.createReadStream(docsPath).pipe(response);
+            }else{
+                response.write('文章'+docsName+'不存在');
+                response.end();
+            }
+        }); 
     }else if(!(resurl.query)){
         var pathname = resurl.pathname;
         var filepath = path.join(root,pathname);
@@ -43,10 +50,11 @@ var server = http.createServer(function(request,response){
                 response.end('404')
             }
         });
-    }else if(docsName === 'index'){
+    }else if(docsName === 'index'){ 
         fs.readFile(path.join(docsFile,'title.json'), 'UTF-8', function(err, data){
             if(err){
-                console.log(err);
+                response.writeHead(404);
+                response.end('err:服务器出错，请重试');
             }else{
                 response.writeHead(200);
                 response.end(data);
