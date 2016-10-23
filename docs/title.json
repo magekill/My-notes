@@ -2,6 +2,8 @@
     "title" : [
         {"home" : "笔记"},
         {"jsonp" : "jsonp的实现原理"},
-        {"window" : "window对象的属性和方法总结"}
+        {"window" : "window对象的属性和方法总结"},
+        {"canvas" : "canvas的基本用法"},
+        {"cookie" : "cookie的基本使用"}
     ]   
 }
